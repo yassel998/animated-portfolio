@@ -20,94 +20,162 @@ const variants = {
 };
 
 const Services = () => {
+  const isMobile = window.innerWidth < 768;
+
   const ref = useRef();
 
   const isInView = useInView(ref, { margin: "-100px" });
 
   return (
-    <motion.div
-      className="services"
-      variants={variants}
-      initial="initial"
-      // animate="animate"
-      // whileInView="animate"
-      ref={ref}
-      animate={isInView && "animate"}
-    >
-      <motion.div className="textContainer" variants={variants}>
-        <p>
-          Mein Ziel ist es, durch innovative Lösungen den Erfolg Ihrer Projekte
-          <br /> zu unterstützen und mich kontinuierlich weiterzuentwickeln
-        </p>
-        <hr />
-      </motion.div>
-      <motion.div className="titleContainer" variants={variants}>
-        <div className="title">
-          <img src="/people.webp" alt="" />
-          <h1>
-            <motion.b whileHover={{ color: "#8fb0c4" }}>Innovative </motion.b>
-            Lösungen
-          </h1>
+    <>
+      {!isMobile ? (
+        <motion.div
+          className="services"
+          variants={variants}
+          initial="initial"
+          // animate="animate"
+          // whileInView="animate"
+          ref={ref}
+          animate={isInView && "animate"}
+        >
+          <motion.div className="textContainer" variants={variants}>
+            <p>
+              Mein Ziel ist es, durch innovative Lösungen den Erfolg Ihrer
+              Projekte
+              <br /> zu unterstützen und mich kontinuierlich weiterzuentwickeln
+            </p>
+            <hr />
+          </motion.div>
+          <motion.div className="titleContainer" variants={variants}>
+            <div className="title">
+              <img src="/people.webp" alt="" />
+              <h1>
+                <motion.b whileHover={{ color: "#8fb0c4" }}>
+                  Innovative{" "}
+                </motion.b>
+                Lösungen
+              </h1>
+            </div>
+            <div className="title">
+              <h1>
+                <motion.b whileHover={{ color: "#8fb0c4" }}>für Ihr </motion.b>{" "}
+                Unternehmen.
+              </h1>
+              <button>Was kann ich tun</button>
+            </div>
+          </motion.div>
+          <motion.div className="listContainer" variants={variants}>
+            <motion.div
+              className="box"
+              whileHover={{ background: "lightgray", color: "black" }}
+            >
+              <h2>Konzeption</h2>
+              <p>
+                Verwendung von UML-Diagrammen wie Klassendiagramm,
+                Aktivitätsdiagramm, Sequenzdiagramm und Anwendung von
+                Konzeptionen für Datenbanken mit Merise
+              </p>
+              {/* <button>Go</button> */}
+            </motion.div>
+            <motion.div
+              className="box"
+              whileHover={{ background: "lightgray", color: "black" }}
+            >
+              <h2>Webentwicklung</h2>
+              <p>
+                Entwicklung von Webanwendungen mit Kenntnissen in Front- und
+                Backend-Entwicklung, inklusive Verwendung bekannter Technologien
+                und Frameworks wie React und Express.js
+              </p>
+              {/* <button>Go</button> */}
+            </motion.div>
+            <motion.div
+              className="box"
+              whileHover={{ background: "lightgray", color: "black" }}
+            >
+              <h2>Soft Skills</h2>
+              <p>
+                Einschließlich Soft Skills wie Kommunikation, Teamarbeit,
+                Problemlösungsfähigkeiten, Anpassungsfähigkeit, Zeitmanagement,
+                Zusammenarbeit, Lernfähigkeit und Geduld
+              </p>
+              {/* <button>Go</button> */}
+            </motion.div>
+            <motion.div
+              className="box"
+              whileHover={{ background: "lightgray", color: "black" }}
+            >
+              <h2>Ausbildungsziele</h2>
+              <p>
+                Meine Ziele für die Ausbildung umfassen das Streben nach
+                stetiger Weiterentwicklung und das Erlernen neuer Fähigkeiten,
+                um eine erfolgreiche Karriere als Anwendungsentwickler
+                aufzubauen
+              </p>
+              {/* <button>Go</button> */}
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      ) : (
+        <div className="services" ref={ref}>
+          <div className="textContainer">
+            <p>
+              Mein Ziel ist es, durch innovative Lösungen den Erfolg Ihrer
+              Projekte zu unterstützen und mich kontinuierlich
+              weiterzuentwickeln
+            </p>
+            <hr />
+          </div>
+
+          <div className="titleContainer">
+            <div className="title">
+              <img src="/people.webp" alt="" />
+              <h1>Innovative Lösungen</h1>
+            </div>
+            <div className="title">
+              <h1>für Ihr Unternehmen.</h1>
+              <button>Was kann ich tun</button>
+            </div>
+          </div>
+
+          <div className="listContainer">
+            <div className="box">
+              <h2>Konzeption</h2>
+              <p>
+                Verwendung von UML-Diagrammen wie Klassendiagramm,
+                Aktivitätsdiagramm, Sequenzdiagramm und Anwendung von
+                Konzeptionen für Datenbanken mit Merise
+              </p>
+            </div>
+            <div className="box">
+              <h2>Webentwicklung</h2>
+              <p>
+                Entwicklung von Webanwendungen mit Kenntnissen in Front- und
+                Backend-Entwicklung, inklusive Verwendung bekannter Technologien
+                und Frameworks wie React und Express.js
+              </p>
+            </div>
+            <div className="box">
+              <h2>Soft Skills</h2>
+              <p>
+                Einschließlich Soft Skills wie Kommunikation, Teamarbeit,
+                Problemlösungsfähigkeiten, Anpassungsfähigkeit, Zeitmanagement,
+                Zusammenarbeit, Lernfähigkeit und Geduld
+              </p>
+            </div>
+            <div className="box">
+              <h2>Ausbildungsziele</h2>
+              <p>
+                Meine Ziele für die Ausbildung umfassen das Streben nach
+                stetiger Weiterentwicklung und das Erlernen neuer Fähigkeiten,
+                um eine erfolgreiche Karriere als Anwendungsentwickler
+                aufzubauen
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="title">
-          <h1>
-            <motion.b whileHover={{ color: "#8fb0c4" }}>für Ihr </motion.b>{" "}
-            Unternehmen.
-          </h1>
-          <button>Was kann ich tun</button>
-        </div>
-      </motion.div>
-      <motion.div className="listContainer" variants={variants}>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Konzeption</h2>
-          <p>
-            Verwendung von UML-Diagrammen wie Klassendiagramm,
-            Aktivitätsdiagramm, Sequenzdiagramm und Anwendung von Konzeptionen
-            für Datenbanken mit Merise
-          </p>
-          {/* <button>Go</button> */}
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Webentwicklung</h2>
-          <p>
-            Entwicklung von Webanwendungen mit Kenntnissen in Front- und
-            Backend-Entwicklung, inklusive Verwendung bekannter Technologien und
-            Frameworks wie React und Express.js
-          </p>
-          {/* <button>Go</button> */}
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Soft Skills</h2>
-          <p>
-            Einschließlich Soft Skills wie Kommunikation, Teamarbeit,
-            Problemlösungsfähigkeiten, Anpassungsfähigkeit, Zeitmanagement,
-            Zusammenarbeit, Lernfähigkeit und Geduld
-          </p>
-          {/* <button>Go</button> */}
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Ausbildungsziele</h2>
-          <p>
-            Meine Ziele für die Ausbildung umfassen das Streben nach stetiger
-            Weiterentwicklung und das Erlernen neuer Fähigkeiten, um eine
-            erfolgreiche Karriere als Anwendungsentwickler aufzubauen
-          </p>
-          {/* <button>Go</button> */}
-        </motion.div>
-      </motion.div>
-    </motion.div>
+      )}
+    </>
   );
 };
 

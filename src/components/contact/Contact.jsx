@@ -55,20 +55,21 @@ const Contact = () => {
       whileInView="animate"
     >
       <motion.div className="textContainer" variants={variants}>
-        <motion.h1 variants={variants}>Lasst uns zusammenarbeiten</motion.h1>
+        <motion.h1 variants={variants}> Bereit für Ausbildung</motion.h1>
         <motion.div className="item" variants={variants}>
           <h2>E-Mail</h2>
-          <span>yasselaissati333@gmail.com</span>
+          <span>yassine.eaissati@gmail.com</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Adresse</h2>
           <span>
-            QU OLD AMAR YAHYA NR 06 <br /> ZEGANGANE NADOR MAROKKO
+            Zur Eisernen Hand 25
+            <br /> 94315 Straubing
           </span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Telefon</h2>
-          <span>+212 603 500 140</span>
+          <span>+49 155 631 534 42</span>
         </motion.div>
       </motion.div>
       <div className="formContainer">

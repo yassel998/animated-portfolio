@@ -1,4 +1,4 @@
-// @import "../../app.scss";
+@import "../../app.scss";
 .services {
   background: linear-gradient(180deg, #0c0c1d, #111132);
 
@@ -14,17 +14,22 @@
     align-items: center;
     gap: 20px;
 
-    // @include mobile {
-    //   align-self: center;
-    //   text-align: center;
-    //   flex-direction: column;
-    // }
+    @include mobile {
+      align-self: center;
+      text-align: center;
+      flex-direction: column;
+    }
 
     p {
       font-weight: 200;
       font-size: 18px;
       color: gray;
       text-align: right;
+      margin-top: 10px;
+      @include mobile {
+        margin-top: 90px;
+
+      }
     }
 
     hr {
@@ -32,9 +37,10 @@
       border: none;
       border-top: 0.5px solid gray;
 
-      //   @include mobile {
-      //     width: 300px;
-      //   }
+      @include mobile {
+        width: 300px;
+        margin-bottom: 30px;
+      }
     }
   }
   .titleContainer {
@@ -43,20 +49,20 @@
     flex-direction: column;
     align-items: center;
 
-    // @include mobile {
-    //   width: 100%;
-    // }
+    @include mobile {
+      width: 100%;
+    }
 
     .title {
       display: flex;
       align-items: center;
       gap: 30px;
 
-      //   @include mobile {
-      //     flex-direction: column;
-      //     text-align: center;
-      //     gap: 20px;
-      //   }
+      @include mobile {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
 
       img {
         width: 230px;
@@ -64,19 +70,19 @@
         border-radius: 50px;
         object-fit: cover;
 
-        // @include mobile {
-        //   width: 200px;
-        //   height: 50px;
-        // }
+        @include mobile {
+          width: 200px;
+          height: 50px;
+        }
       }
 
       h1 {
         font-size: 46px;
         font-weight: 100;
 
-        // @include mobile {
-        //   font-size: 36px;
-        // }
+        @include mobile {
+          font-size: 36px;
+        }
       }
 
       button {
@@ -88,11 +94,11 @@
         font-size: 24px;
         cursor: pointer;
 
-        // @include mobile {
-        //   font-size: 16px;
-        //   width: 150px;
-        //   height: 50px;
-        // }
+        @include mobile {
+          font-size: 16px;
+          width: 150px;
+          height: 50px;
+        }
       }
     }
   }
@@ -102,10 +108,10 @@
     max-width: 1100px;
     margin: auto;
 
-    // @include mobile {
-    //   flex-direction: column;
-    //   width: 100%;
-    // }
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+    }
 
     .box {
       padding: 18px;
@@ -114,18 +120,18 @@
       flex-direction: column;
       justify-content: space-between;
 
-      //   @include mobile {
-      //     border: none;
-      //     align-items: center;
-      //     gap: 20px;
-      //     padding: 10px;
-      //   }
+      @include mobile {
+        border: none;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+      }
 
-      //   p {
-      //     @include mobile {
-      //       display: none;
-      //     }
-      //   }
+      p {
+        @include mobile {
+          display: none;
+        }
+      }
 
       button {
         padding: 10px;
@@ -133,14 +139,14 @@
         border: none;
         cursor: pointer;
 
-        // @include mobile {
-        //   background-color: transparent;
-        //   border: 1px solid orange;
-        //   border-radius: 5px;
-        //   color: orange;
-        //   width: 50%;
-        //   padding: 5px;
-        // }
+        @include mobile {
+          background-color: transparent;
+          border: 1px solid orange;
+          border-radius: 5px;
+          color: orange;
+          width: 50%;
+          padding: 5px;
+        }
       }
     }
   }
